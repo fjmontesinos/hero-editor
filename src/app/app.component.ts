@@ -10,6 +10,11 @@ import { HeroService } from './hero.service';
     <h1>{{title}}</h1>
     
     <h2>Mis Héroes</h2>
+    
+    <div *ngIf="!heroes">
+      Obteniendo listado de héroes...
+    </div>
+
     <ul class="heroes">
       <li *ngFor="let hero of heroes" 
         [class.selected]="hero === selectedHero"
@@ -86,7 +91,10 @@ export class AppComponent implements OnInit {
   constructor(private heroService: HeroService) { };
 
   ngOnInit() : void {
-    this.heroService.getHeroes().then(retHeros => this.heroes = retHeros);
+    this.heroService.getHeroes().then((retHeros) => 
+        new Promise((resolve) => 
+          setTimeout (() => this.heroes = retHeros, 2000))
+      );
   }
 
   onSelect(hero : Hero) : void {
