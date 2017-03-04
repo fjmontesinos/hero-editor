@@ -44,6 +44,7 @@ const HEROES: Hero[] = [
       list-style-type: none;
       padding: 0;
       width: 15em;
+      float:left;
     }
     .heroes li {
       cursor: pointer;
