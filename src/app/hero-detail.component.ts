@@ -5,10 +5,10 @@ import { Hero } from './hero';
   selector: 'hero-detail',
   template: `
     <div *ngIf="hero" style="float:left;margin-left:20px">
-      <h2>{{hero.name}} details!</h2>
+      <h2>{{hero.name}} detalles!</h2>
       <div><label>Id : </label> {{hero.id}}</div>
       <div>
-        <label>Name : </label> 
+        <label>Nombre : </label> 
         <input [(ngModel)]="hero.name" placeholder="name" />
       </div>
       <div style="margin-top:20px">

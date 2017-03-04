@@ -19,7 +19,7 @@ const HEROES: Hero[] = [
   template: `
     <h1>{{title}}</h1>
     
-    <h2>My Heros</h2>
+    <h2>Mis Héroes</h2>
     <ul class="heroes">
       <li *ngFor="let hero of heroes" 
         [class.selected]="hero === selectedHero"
@@ -87,7 +87,7 @@ const HEROES: Hero[] = [
 })
 
 export class AppComponent  { 
-  title = 'Tour of Heroes';
+  title = 'Tour de Héroes';
   heroes = HEROES;
 
   selectedHero : Hero;
