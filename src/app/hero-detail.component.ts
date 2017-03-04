@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Hero } from './hero';
 
 @Component({
@@ -20,8 +20,8 @@ import { Hero } from './hero';
 
 export class HeroDetailComponent {
     @Input()
-    @Output('selectedHero')
     hero : Hero;
+
     ocultarHeroDetail() : void {
       this.hero = undefined;
     }
