@@ -11,8 +11,12 @@ import { HeroService } from './hero.service';
     
     <h2>Mis Héroes</h2>
     
-    <div *ngIf="!heroes">
-      Obteniendo listado de héroes...
+    <div *ngIf="!this.heroesGet">
+      Obteniendo listado de héroes favoritos...
+    </div>
+
+    <div *ngIf="( (this.heroesGet) && (heroes.length == 0) )">
+      UPS !!! No hay heroes en tu carpeta de favoritos.
     </div>
 
     <ul class="heroes">
@@ -83,6 +87,7 @@ import { HeroService } from './hero.service';
 })
 
 export class AppComponent implements OnInit { 
+  heroesGet : boolean = false;
   title = 'Tour de Héroes';
   heroes : Hero[];
 
@@ -93,7 +98,12 @@ export class AppComponent implements OnInit {
   ngOnInit() : void {
     this.heroService.getHeroes().then((retHeros) => 
         new Promise((resolve) => 
-          setTimeout (() => this.heroes = retHeros, 2000))
+          setTimeout (() => {
+            this.heroes = retHeros;
+            this.heroesGet = true;
+            // console.log(retHeros);
+          }
+          , 2000))
       );
   }
 
