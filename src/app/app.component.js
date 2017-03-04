@@ -14,9 +14,12 @@ var AppComponent = (function () {
     function AppComponent(heroService) {
         this.heroService = heroService;
         this.title = 'Tour de Héroes';
-        this.heroes = this.heroService.getHeroes();
     }
     ;
+    AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.heroService.getHeroes().then(function (retHeros) { return _this.heroes = retHeros; });
+    };
     AppComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
     };
