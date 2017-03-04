@@ -77,11 +77,13 @@ import { HeroService } from './hero.service';
 
 export class AppComponent  { 
   title = 'Tour de Héroes';
-  heroes = this.heroService.getHeroes();
+  heroes : Hero[];
 
   selectedHero: Hero;
 
-  constructor(private heroService: HeroService) { };
+  constructor(private heroService: HeroService) { 
+    this.heroes = this.heroService.getHeroes();
+  };
 
   onSelect(hero : Hero) : void {
     this.selectedHero = hero;
