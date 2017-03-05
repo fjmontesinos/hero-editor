@@ -37,7 +37,14 @@ import { HeroService } from './hero.service';
           path: '',
           redirectTo: 'my-dashboard',
           pathMatch: 'full'
+        },
+
+        {
+          path: 'hero/:id',
+          component: HeroDetailComponent
+
         }
+
       ])
 
     ],
