@@ -9,8 +9,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
+var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
 var my_heroes_component_1 = require("./my-heroes.component");
+var my_heroes_dashboard_component_1 = require("./my-heroes.dashboard.component");
 var hero_detail_component_1 = require("./hero-detail.component");
 var hero_service_1 = require("./hero.service");
 var AppModule = (function () {
@@ -20,8 +22,33 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, my_heroes_component_1.MyHeroesComponent, hero_detail_component_1.HeroDetailComponent],
+        imports: [
+            platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            // Routes tell the router which views to display when a user clicks a link 
+            // or pastes a URL into the browser address bar.
+            router_1.RouterModule.forRoot([
+                {
+                    path: 'my-heroes',
+                    component: my_heroes_component_1.MyHeroesComponent
+                },
+                {
+                    path: 'my-dashboard',
+                    component: my_heroes_dashboard_component_1.MyHeroDashboardComponent
+                },
+                /**
+                 * We want the app to show the dashboard when it starts and we want to see a
+                 * nice URL in the browser address bar that says /dashboard. Remember that the
+                 * browser launches with / in the address bar.
+                 */
+                {
+                    path: '',
+                    redirectTo: 'my-dashboard',
+                    pathMatch: 'full'
+                }
+            ])
+        ],
+        declarations: [app_component_1.AppComponent, my_heroes_component_1.MyHeroesComponent, my_heroes_dashboard_component_1.MyHeroDashboardComponent, hero_detail_component_1.HeroDetailComponent],
         providers: [hero_service_1.HeroService],
         bootstrap: [app_component_1.AppComponent]
     })
