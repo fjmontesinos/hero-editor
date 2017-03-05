@@ -1,15 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'heroes-app',
-  template : `
-    <h1>{{title}}</h1>   
-    <nav>
-        <a routerLink="/my-heroes">Mis Héroes</a>
-        <a routerLink="/my-dashboard">Mi Dashboard</a>
-    </nav>
-    <router-outlet></router-outlet>
-  `
+    moduleId: module.id,
+    selector: 'heroes-app',
+    templateUrl : './views/app.component.html'
+
 })
 
 export class AppComponent {

@@ -1,0 +1,15 @@
+<div *ngIf="hero" style="float:left;margin-left:20px">
+    <h2>{{hero.name}} detalles!</h2>
+    <div>
+        <label>Id : </label> {{hero.id}}
+    </div>
+    
+    <div>
+        <label>Nombre : </label> 
+        <input [(ngModel)]="hero.name" placeholder="name" />
+    </div>
+    
+    <div style="margin-top:20px">
+        <button (click)="ocultarHeroDetail()">Ocultar</button>
+    </div>
+</div>

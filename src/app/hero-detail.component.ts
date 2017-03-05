@@ -2,20 +2,9 @@ import { Component, Input } from '@angular/core';
 import { Hero } from './hero';
 
 @Component({
+  moduleId: module.id,
   selector: 'hero-detail',
-  template: `
-    <div *ngIf="hero" style="float:left;margin-left:20px">
-      <h2>{{hero.name}} detalles!</h2>
-      <div><label>Id : </label> {{hero.id}}</div>
-      <div>
-        <label>Nombre : </label> 
-        <input [(ngModel)]="hero.name" placeholder="name" />
-      </div>
-      <div style="margin-top:20px">
-        <button (click)="ocultarHeroDetail()">Ocultar</button>
-      </div>
-    </div>
-    `
+  templateUrl: './views/hero-detail.component.html'
 })
 
 export class HeroDetailComponent {
