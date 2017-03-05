@@ -12,7 +12,7 @@ const routes: Routes = [
      * nice URL in the browser address bar that says /dashboard. Remember that the 
      * browser launches with / in the address bar.
      */
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/my-dashboard', pathMatch: 'full' },
   { path: 'my-dashboard',  component: MyHeroDashboardComponent },
   { path: 'hero/:id', component: HeroDetailComponent },
   { path: 'my-heroes',     component: MyHeroesComponent }
