@@ -9,9 +9,15 @@ import { HEROES } from './hero.mock';
  */
 @Injectable()
 export class HeroService {
+    // Milisegundos para la llamada a la carga de los héroes
+    ms : number;
 
     getHeroes () : Promise<Hero[]> {
-        return Promise.resolve(HEROES);
+        // Milisegundos entre 0 y 3
+        this.ms = (Math.floor(Math.random() * 3) + 0) * 1000;
+
+        // Llamada a promise para simular un delay
+        return new Promise((resolve) => setTimeout(() => resolve(HEROES), this.ms));
     }
 
     getHero(id: number): Promise<Hero> {
