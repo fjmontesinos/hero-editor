@@ -17,6 +17,7 @@ export class HeroService {
     // Milisegundos para la llamada a la carga de los héroes
     private ms : number;
     private heroesUrl = 'api/heroes';  // URL to web api
+    private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(private http: Http) { }
 
@@ -45,5 +46,14 @@ export class HeroService {
             .toPromise()
             .then(response => response.json().data as Hero)
             .catch(this.handleError);
+    }
+
+    update(hero : Hero) : Promise<Hero> {
+        const url = `${this.heroesUrl}/${hero.id}`;
+        return this.http
+            .put(url, JSON.stringify(hero), {headers: this.headers})
+            .toPromise()
+            .then(() => hero)
+            .catch(this.handleError);;
     }
 }
