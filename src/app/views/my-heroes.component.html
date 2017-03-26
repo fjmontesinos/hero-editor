@@ -8,6 +8,13 @@
     UPS !!! No hay heroes en tu carpeta de favoritos.
 </div>
 
+<div *ngIf="this.heroesGet">
+  <label>Hero Nombre:</label> <input #heroName />
+  <button (click)="addHero(heroName.value); heroName.value=''">
+    Añadir
+  </button>
+</div>
+
 <ul class="heroes">
     <li *ngFor="let hero of heroes" 
     [class.selected]="hero === selectedHero"
