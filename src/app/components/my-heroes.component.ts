@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Hero } from './hero';
-import { HeroService } from './services/hero.service';
 
+import { Hero } from '../domain/hero';
+import { HeroService } from '../services/hero.service';
 
 @Component({
   moduleId: module.id,
   selector: 'my-heroes',
-  templateUrl: './views/my-heroes.component.html',
+  templateUrl: '../views/my-heroes.component.html',
   // MUY IMPORTANTE
   // When we assign styles to a component they are scoped to that specific component.
-  styleUrls: ['./css/hero.css']
+  styleUrls: ['../css/hero.css']
 })
 
 export class MyHeroesComponent implements OnInit { 

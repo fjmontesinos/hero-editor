@@ -1,8 +1,8 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MyHeroDashboardComponent }   from './my-heroes.dashboard.component';
-import { MyHeroesComponent }      from './my-heroes.component';
-import { HeroDetailComponent }  from './hero-detail.component';
+import { MyHeroDashboardComponent }   from './components/my-heroes.dashboard.component';
+import { MyHeroesComponent }      from './components/my-heroes.component';
+import { HeroDetailComponent }  from './components/hero-detail.component';
 
 // Routes tell the router which views to display when a user clicks a link 
 // or pastes a URL into the browser address bar.
