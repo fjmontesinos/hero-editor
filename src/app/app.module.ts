@@ -14,6 +14,7 @@ import { AppComponent }  from './app.component';
 import { MyHeroesComponent }  from './my-heroes.component';
 import { MyHeroDashboardComponent }  from './my-heroes.dashboard.component';
 import { HeroDetailComponent } from './hero-detail.component';
+import { HeroSearchComponent } from './hero-search.component';
 
 import { HeroService } from './hero.service';
 
@@ -27,7 +28,12 @@ import { HeroService } from './hero.service';
       AppRoutingModule
     ],
 
-  declarations: [ AppComponent, MyHeroesComponent, MyHeroDashboardComponent, HeroDetailComponent],
+  declarations: [ 
+      AppComponent, 
+      MyHeroesComponent, 
+      MyHeroDashboardComponent, 
+      HeroDetailComponent, 
+      HeroSearchComponent],
   
   providers:    [ HeroService], 
   
